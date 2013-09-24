@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Setting up you Raspberry Pi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      body {
+        background-color: #333333;
+      }
+      h1 {
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+      }
+
+      #container {
+        padding: 1em;
+      }
+      .panel-heading {
+        padding: 0.7em 1em;
+      }
+      .panel-title {
+        font-size: 200%;
+      }
+      .stepIndex {
+        display: inline-block;
+        color: white;
+        font-weight: bold;
+        border-radius: 1em;
+        width: 2em;
+        height: 2em;
+        background-color: #333333;
+        text-align: center;
+        line-height: 1.9em;
+        margin-right: 0.8em;
+      }
+      .panel-group .panel + .panel {
+        margin-top: 0.3em;
+      }
+      .panel-default > .panel-heading {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <div id="container">
+
+      <div class="panel-group" id="accordion">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#step1">
+                <span class="stepIndex">1</span> Get a clean Raspbian image
+              </a>
+            </h2>
+          </div>
+          <div id="step1" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#step2">
+                <span class="stepIndex">2</span> Create a virtual machine on your computer
+              </a>
+            </h2>
+          </div>
+          <div id="step2" class="panel-collapse collapse">
+            <div class="panel-body">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#step3">
+                <span class="stepIndex">3</span> Install packages
+              </a>
+            </h2>
+          </div>
+          <div id="step3" class="panel-collapse collapse">
+            <div class="panel-body">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#step4">
+                <span class="stepIndex">4</span> Enable SSH connections
+              </a>
+            </h2>
+          </div>
+          <div id="step4" class="panel-collapse collapse">
+            <div class="panel-body">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#step5">
+                <span class="stepIndex">5</span> Copy the workshop files
+              </a>
+            </h2>
+          </div>
+          <div id="step5" class="panel-collapse collapse">
+            <div class="panel-body">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#step6">
+                <span class="stepIndex">6</span> Install the image to your SD card
+              </a>
+            </h2>
+          </div>
+          <div id="step6" class="panel-collapse collapse">
+            <div class="panel-body">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#step7">
+                <span class="stepIndex">7</span> Test Pd, sound in/out and your controller
+              </a>
+            </h2>
+          </div>
+          <div id="step7" class="panel-collapse collapse">
+            <div class="panel-body">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#step8">
+                <span class="stepIndex">8</span> Setup Pd to start on boot
+              </a>
+            </h2>
+          </div>
+          <div id="step8" class="panel-collapse collapse">
+            <div class="panel-body">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+

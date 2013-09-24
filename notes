@@ -2,11 +2,7 @@
 2) Use Qemu to load a virtual machine running your image
 3) Install necessary packages
 4) Enable SSH, setup a static IP
-5) Copy workshop files to /home/pi
-
-  i) mount the image
-  ii) copy files 
-
+5) Copy workshop files to /home/pi (git clone)
 6) Install it to your SD card
 
   i) format it to FAT32
@@ -76,6 +72,7 @@ Necessary packages
 sudo apt-get update
 sudo apt-get install pure-data
 sudo apt-get install pd-hid
+sudo apt-get install git
 
 
 ethernet connection
