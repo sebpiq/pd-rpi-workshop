@@ -1,0 +1,13 @@
+#N canvas 298 281 805 300 10;
+#X obj 62 87 dac~;
+#X msg 217 88 \; pd dsp 1;
+#X obj 197 34 loadbang;
+#X obj 217 61 del 100;
+#X text 291 61 Why we add a delay here? Answer : http://puredata.info/docs/faq/why-doesn-t-audio-work-when-i-start-pd-in-nogui-mode
+;
+#X obj 35 52 osc~ 220;
+#X obj 93 52 osc~ 330;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 1;
