@@ -1,0 +1,18 @@
+#N canvas 422 242 711 428 10;
+#X obj 72 88 gr.utils/mouse;
+#X obj 299 284 dac~;
+#X obj 191 22 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 191 45 gr.in/live \$0-SOURCE;
+#X obj 438 230 gr.env/exp;
+#X obj 298 230 gr.in/read \$0-SOURCE;
+#X msg 296 171 1000 1000 \$1;
+#X obj 295 131 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 7;
+#X floatatom 191 69 10 0 0 0 - - -;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 5 0 1 1;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
