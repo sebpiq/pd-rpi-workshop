@@ -1,0 +1,34 @@
+#N canvas 193 184 777 473 10;
+#X obj 55 206 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 55 277 outlet;
+#X obj 55 183 r \$0-BANG;
+#X obj 126 182 r \$0-MIN;
+#X obj 194 182 r \$0-MAX;
+#X obj 55 88 inlet;
+#X obj 55 137 s \$0-BANG;
+#X obj 131 87 inlet;
+#X obj 265 86 inlet;
+#X obj 158 111 f \$1;
+#X obj 131 136 s \$0-MIN;
+#X obj 193 86 loadbang;
+#X obj 235 111 f \$2;
+#X obj 235 136 s \$0-MAX;
+#X text 52 11 Bang the left inlet to output a random number between
+MIN and MAX.;
+#X text 51 49 Inlet 2 is min \, inlet 3 is max.;
+#X obj 55 229 random 1000;
+#X obj 55 253 gr.utils/mapVal 0 1000;
+#X connect 0 0 16 0;
+#X connect 2 0 0 0;
+#X connect 3 0 17 3;
+#X connect 4 0 17 4;
+#X connect 5 0 6 0;
+#X connect 7 0 10 0;
+#X connect 8 0 13 0;
+#X connect 9 0 10 0;
+#X connect 11 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 1 0;

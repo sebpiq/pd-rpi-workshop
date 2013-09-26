@@ -1,0 +1,15 @@
+#N canvas 726 149 450 300 10;
+#X obj 96 61 inlet;
+#X obj 96 113 * 1000;
+#X obj 146 61 samplerate~;
+#X obj 96 141 outlet;
+#X text 94 8 Converts a time in samples to milliseconds;
+#X obj 146 39 loadbang;
+#X floatatom 170 169 15 0 0 0 - - -;
+#X obj 96 87 /;
+#X connect 0 0 7 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 7 1;
+#X connect 5 0 2 0;
+#X connect 7 0 1 0;
