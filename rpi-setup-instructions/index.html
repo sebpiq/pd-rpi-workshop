@@ -56,15 +56,60 @@
         color: grey;
         font-size: 90%;
       }
+      .nav {
+        margin-bottom: 1em;
+      }
+
+      .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+        background-color: #555;
+        color: #FFFFFF;
+      }
+      .nav a {
+        color: #aaa;
+      }
     </style>
   </head>
   <body>
+    <script src="js/underscore-min.js"></script>
     <script src="js/jquery-2.0.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+      var oses = ['ubuntu', 'mac']
+        , osNav
+
+      var hashChanged = function () {
+        var selectedOs = window.location.hash.slice(1) || 'ubuntu'
+          , otherOses = _.difference(oses, [selectedOs])
+          , otherOsesCSS = _.map(otherOses, function(os) { return '.' + os }).join(',')
+        osNav.find('.osChoice').each(function(i, elem) {
+          if ($(elem).hasClass(selectedOs)) {
+            $(elem).addClass('active')
+            $('#instructions').find('.' + selectedOs).show()
+          } else {
+            $(elem).removeClass('active')
+            $('#instructions').find(otherOsesCSS).hide()
+          }
+        })
+      }
+
+      $(function() {
+        osNav = $('.nav')
+        oses.forEach(function(os) {
+          var osChoice = $('<li class="osChoice ' + os + '"><a href="#' + os + '">' + os + '</a></li>')
+            .appendTo(osNav)
+        })
+
+        hashChanged()
+        $(window).on('hashchange', hashChanged)
+      })
+    </script>
 
     <div id="container">
 
-      <div class="panel-group" id="accordion">
+      <ul class="nav nav-pills">
+      </ul>
+
+      <div class="panel-group" id="instructions">
 
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -94,23 +139,24 @@
               <p>We need to customize the image we just downloaded, install programs and configure the system for our needs.</p>
               <p>For this, no need to install the image on the Pi yet. By using a machine emulator, we can fake a Raspberry Pi on our laptop, install our image there, and do all the configuration we need. We'll use a machine emulator called <a href="http://www.qemu.org">QEMU</a>. You also need a RPI Linux kernel compiled for QEMU, which you can get <a href="http://xecdesign.com/downloads/linux-qemu/kernel-qemu">here</a>. Now, run this to install QEMU :</p>
               <pre class="ubuntu"><code>sudo apt-get install qemu-system</code></pre>
+              <pre class="mac"><code>sudo port install qemu +target_arm</code></pre>
 
               <p>Now, we need to launch it and run our image. First, execute :</p>
-              <pre class="ubuntu mac"><code>file your-raspbian.img</code></pre>
+              <pre class=""><code>file your-raspbian.img</code></pre>
 
-              <p class="ubuntu mac">From the output of this command, take the partition 2 'startsector' value and multiply by 512, and use this figure as the offset value in the mount command below.</p>
-              <pre class="ubuntu mac"><code>sudo mount your-raspbian.img -o offset=62914560 /mnt
+              <p class="">From the output of this command, take the partition 2 'startsector' value and multiply by 512, and use this figure as the offset value in the mount command below.</p>
+              <pre class=""><code>sudo mount your-raspbian.img -o offset=62914560 /mnt
 nano /mnt/etc/ld.so.preload
 </code></pre>
                 
               <p>Comment out the line in the file and save. Then unmount the image.</p>
-              <pre class="ubuntu mac"><code>sudo umount your-raspbian.img</code></pre>
+              <pre class=""><code>sudo umount your-raspbian.img</code></pre>
               
               <p>Then, you can start QEMU with your image</p>
-              <pre class="ubuntu mac"><code>qemu-system-arm -kernel your-linux-kernel -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1" -hda your-raspbian.img -redir tcp:5022::22</code></pre>
+              <pre class=""><code>qemu-system-arm -kernel your-linux-kernel -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1" -hda your-raspbian.img -redir tcp:5022::22</code></pre>
 
               <p>If it says that running fsck failed, just run</p>
-              <pre class="ubuntu"><code>fsck /dev/sda2</code></pre>
+              <pre class=""><code>fsck /dev/sda2</code></pre>
               <p>and restart the emulator when done.</p>
 
               <p>Because this is the first time we start the image on a machine, you will be prompted with a menu allowing you to configure some options. Don't forget to change your password, and to change the keyboard layout.</p>
@@ -138,7 +184,7 @@ nano /mnt/etc/ld.so.preload
             <div class="panel-body">
               <p>To install all the packages we need, run the following commands in the emulator :</p>
               <pre><code>sudo apt-get update
-sudo apt-get install pure-data
+sudo apt-get install puredata
 sudo apt-get install pd-hid
 sudo apt-get install git</pre></code>
             </div>

@@ -44,6 +44,11 @@
 #X obj 169 117 gr.utils/mapVal 0 10000 -7000 -1000;
 #X obj 163 507 freeverb~;
 #X obj 96 508 freeverb~;
+#X msg 698 252 \; pd dsp 1;
+#X obj 698 198 loadbang;
+#X obj 698 225 del 100;
+#X text 772 225 Why we add a delay here? Answer : http://puredata.info/docs/faq/why-doesn-t-audio-work-when-i-start-pd-in-nogui-mode
+;
 #X connect 0 0 35 0;
 #X connect 0 1 36 0;
 #X connect 0 2 15 0;
@@ -93,3 +98,5 @@
 #X connect 36 0 1 0;
 #X connect 37 0 6 1;
 #X connect 38 0 6 0;
+#X connect 40 0 41 0;
+#X connect 41 0 39 0;
