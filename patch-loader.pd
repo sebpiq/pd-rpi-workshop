@@ -1,0 +1,23 @@
+#N canvas 228 204 814 387 10;
+#X obj 107 59 loadbang;
+#X obj 107 110 del 5000;
+#X obj 203 220 print nogui-loader;
+#X msg 203 110 loading Pd ...;
+#X obj 210 58 r nameAndPath;
+#X msg 107 207 \; pd open \$1 \$2;
+#X obj 107 136 list;
+#X text 104 2 This is a loader for patches. When using -nogui \, there
+are some bugs because patches are started before Pd is fully initialized.
+This loader is a hack to fix those;
+#X msg 211 193 loading patch ...;
+#X obj 108 255 print;
+#X connect 0 0 1 0;
+#X connect 0 0 3 0;
+#X connect 1 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 6 1;
+#X connect 4 0 2 0;
+#X connect 5 0 9 0;
+#X connect 6 0 5 0;
+#X connect 6 0 8 0;
+#X connect 8 0 2 0;
