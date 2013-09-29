@@ -1,0 +1,55 @@
+body {
+  background-color: #333333;
+}
+p {
+  margin-top: 1.5em;
+  font-size: 120%;
+}
+h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+#container {
+  padding: 1em;
+}
+.panel-heading {
+  padding: 0.7em 1em;
+}
+.panel-title {
+  font-size: 160%;
+}
+.stepIndex {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  border-radius: 1em;
+  width: 2em;
+  height: 2em;
+  background-color: #333333;
+  text-align: center;
+  line-height: 1.9em;
+  margin-right: 0.8em;
+}
+.panel-group .panel + .panel {
+  margin-top: 0.3em;
+}
+.panel-default > .panel-heading {
+  background-color: white;
+}
+.references {
+  color: grey;
+  font-size: 90%;
+}
+.nav {
+  margin-bottom: 1em;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background-color: #555;
+  color: #FFFFFF;
+}
+.nav a {
+  color: #aaa;
+}

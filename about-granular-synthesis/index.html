@@ -1,0 +1,137 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <title>Granular synthesis</title>
+    <style>
+      body {
+        font-size: 24px;
+      }
+      .step {
+        width: 500px;
+      }
+      h1 {
+        font-size: 200%;
+        text-transform: uppercase;
+      }
+      h2 { font-size: 160%; }
+      .parameter h2 {
+        float:left;
+      }
+    </style>
+</head>
+
+<body class="impress-not-supported">
+
+  <div id="impress">
+
+      <div class="step" data-x="0" data-y="-1500">
+        <h1>Granular synthesis</h1>
+        <img src="images/grains2.gif" />
+      </div>
+
+      <div class="step" data-x="1000" data-y="-1500">
+        <h2>Examples</h2>
+        <ul>
+          <li><a href="http://www.youtube.com/watch?v=0NLLRKGVDl4">Modell 5</a></li>
+          <li><a href="https://www.youtube.com/watch?v=70byQuA58fg">Curtis Roads - Half-life</a></li>
+        </ul>
+      </div>
+
+      <div class="step" data-x="2000" data-y="-1500">
+        <h1>Parameters</h1>
+      </div>
+
+      <div class="step parameter" data-x="3000" data-y="-1500">
+        <h2 style="margin-top:200px;">Enveloppe</h2>
+        <img src="images/grain-envelope.gif" />
+      </div>
+
+      <div class="step parameter" data-x="4000" data-y="-1500">
+        <h2 style="margin-right:1em;margin-top:50px;">Delay</h2>
+        <img src="images/grainline-delay.gif" />
+      </div>
+
+      <div class="step parameter" data-x="5000" data-y="-1500">
+        <h2 style="">Density</h2>
+        <img src="images/grain-density.gif" />
+      </div>
+
+      <div class="step" data-x="6000" data-y="-1500">
+        <h2 style="margin-bottom:1em">Density ≠ delay</h2>
+        <img src="images/grain-density-vs-delay.gif" />
+      </div>
+
+      <div class="step" data-x="7000" data-y="-1500">
+        <h2 style="margin-bottom:1em">Length</h2>
+        <img src="images/grain-length.gif" />
+      </div>
+
+      <div class="step" data-x="8000" data-y="-1500">
+        <h2 style="">Content</h2>
+        <img src="images/grain-content.gif" />
+      </div>
+
+      <div class="step" data-x="9000" data-y="-1500">
+        <h1 style="">Implementation</h1>
+
+        <ul>
+          <li>sound source</li>
+          <li>
+            grain line
+
+            <ul>
+              <li>
+                trigger
+                <ul>
+                  <li>density</li>
+                  <li>length</li>
+                </ul>
+            </ul>
+
+            <ul>
+              <li>
+                grain
+                <ul>
+                  <li>sound source
+                    <ul>
+                      <li>length</li>
+                      <li>pitch</li>
+                      <li>read position</li>
+                    </ul>
+                  </li>
+                  <li>envelope</li>
+                </ul>
+            </ul>
+              
+              
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="step" data-x="10000" data-y="-1500">
+        <div class="reference">
+          Reference
+          <div><a href="http://www.artesonoro.net/tesisgran/indicegran.html">http://www.artesonoro.net/tesisgran/indicegran.html</a></div>
+        </div>
+      </div>
+
+</body>
+
+</html>
+
+  </div>
+
+  <script src="js/impress.js"></script>
+  <script>impress().init();</script>
+
+</body>
+</html>
+
+<body>
+
