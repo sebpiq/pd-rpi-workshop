@@ -1,0 +1,35 @@
+#N canvas 541 30 599 536 10;
+#X obj 34 258 inlet;
+#X obj 157 140 loadbang;
+#X obj 157 165 f \$1;
+#X obj 40 468 vline~;
+#X obj 40 502 outlet~;
+#X obj 157 212 s \$0-RATIO;
+#X obj 157 257 r \$0-RATIO;
+#X msg 40 434 0 0 \, 1 \$1 0 \, 1 \$2 \$1 \, 0 \$1 \$3;
+#X obj 40 397 pack f f f;
+#X obj 34 336 expr $f1 * $f2 / 2 \; $f1 - ($f1 * $f2) \; $f1 - ($f1
+* $f2 / 2);
+#X text 132 394 <slope duration> \, <sustain duration> \, <release
+start>;
+#X floatatom 34 294 5 0 0 0 - - -;
+#X obj 157 295 nbx 5 14 0 1 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 222 140 inlet;
+#X text 30 15 Triangular enveloppe. The argument is the ratio rectangle/triangle.
+1 is fully triangular \, 0 is fully rectangular \, between is a trapezoidal
+enveloppe \; \; Inlet 1 : duration of enveloppe \; Inlet 2 : triangle
+ratio \; \; Outlet 1 : enveloppe signal;
+#X connect 0 0 11 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 6 0 12 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 1 8 1;
+#X connect 9 2 8 2;
+#X connect 11 0 9 0;
+#X connect 12 0 9 1;
+#X connect 13 0 5 0;

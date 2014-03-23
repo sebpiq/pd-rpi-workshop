@@ -1,0 +1,25 @@
+#N canvas 312 176 705 337 10;
+#X obj 32 240 gr.trigger/rand;
+#X floatatom 32 157 5 0 0 0 - - -;
+#X floatatom 75 186 5 0 0 0 - - -;
+#X floatatom 119 216 5 0 0 0 - - -;
+#X text 164 154 Mean of the grain length;
+#X text 163 185 Variance of the grain length;
+#X text 166 217 Density of grains;
+#X obj 40 123 unpack f f f;
+#X msg 40 16 1000 0 100;
+#X text 132 11 Trigger exactly one grain of 1000 ms every 1000 ms.
+In fact \, this does the same thing as [gr.trigger/loop];
+#X obj 32 264 print;
+#X msg 54 65 1000 500 50;
+#X text 137 65 Triggers grains of length between [500ms \, 1500ms]
+with a density of 50%.;
+#X connect 0 0 10 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 2;
+#X connect 7 0 1 0;
+#X connect 7 1 2 0;
+#X connect 7 2 3 0;
+#X connect 8 0 7 0;
+#X connect 11 0 7 0;

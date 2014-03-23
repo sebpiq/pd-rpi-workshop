@@ -1,0 +1,96 @@
+#N canvas 180 63 1082 664 10;
+#X obj 29 369 adc~;
+#X obj 31 482 tabwrite~ \$1;
+#X obj 294 417 loadbang;
+#X obj 262 443 metro 16000;
+#X msg 586 372 0 0 \, 705600 16000;
+#X obj 439 1 table \$1 705600;
+#X obj 512 448 snapshot~;
+#X obj 556 419 metro 10;
+#X obj 508 419 vline~;
+#X obj 512 493 s \$0-WRITE-POS;
+#X obj 277 180 r \$0-WRITE-POS;
+#X obj 262 204 f;
+#X obj 259 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 56 458 start \$1;
+#X msg 440 372 705600 \$1;
+#X obj 267 273 -;
+#X msg 262 251 705600;
+#X obj 262 228 t b f;
+#X floatatom 512 469 10 0 0 0 - - -;
+#X obj 556 395 loadbang;
+#X obj 586 349 r \$0-WRITE-ZERO;
+#X obj 36 435 r \$0-WRITE-ZERO;
+#X obj 267 417 del;
+#X text 293 202 memorizes the position in samples when the time was
+frozen;
+#X obj 27 205 s \$0-PAUSE;
+#X obj 8 163 sel 0 1;
+#X obj 8 184 s \$0-RESUME;
+#X obj 508 349 r \$0-PAUSE;
+#X msg 508 372 stop;
+#X obj -42 435 r \$0-PAUSE;
+#X msg -42 458 stop;
+#X obj 248 369 r \$0-PAUSE;
+#X msg 248 392 stop;
+#X text 560 -14 array size is 16s \, which is equivalent to 705600
+samples \, which is divisible by 64 \, so the array contains a round
+number of blocks \, and we shouldn't loose data (not tested).;
+#X obj 259 158 r \$0-RESUME;
+#X obj 8 141 inlet;
+#X obj 262 467 s \$0-WRITE-ZERO;
+#X obj 137 566 r \$0-WRITE-ZERO;
+#X obj 137 592 outlet;
+#X obj 30 592 outlet;
+#X obj 30 566 r \$0-WRITE-POS;
+#X obj 31 403 *~ 0.5;
+#X obj 267 297 gr.utils/sToMs;
+#X text -4 54;
+#X text -4 78;
+#X text -4 -25 This is a source which takes live input \, and where
+recording can be paused and resumed at any time. It takes one argument
+: the name to give to the array in which the input is recorded. For
+example [gr.in/live MYARRAY]. Then you can read the sound with [tabread~
+MYARRAY] \; \; Inlet 1 : 1 to pause recording \, 0 to resume recording
+\; \; Outlet 1 : is write position in samples \; Outlet 2 : sends a
+bang everytime the write position is 0;
+#X connect 0 0 41 0;
+#X connect 0 1 41 0;
+#X connect 2 0 3 0;
+#X connect 3 0 36 0;
+#X connect 4 0 8 0;
+#X connect 6 0 18 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 10 0 11 1;
+#X connect 11 0 13 0;
+#X connect 11 0 17 0;
+#X connect 12 0 11 0;
+#X connect 13 0 1 0;
+#X connect 14 0 8 0;
+#X connect 15 0 42 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 17 1 15 1;
+#X connect 18 0 9 0;
+#X connect 19 0 7 0;
+#X connect 20 0 4 0;
+#X connect 21 0 1 0;
+#X connect 22 0 3 0;
+#X connect 25 0 26 0;
+#X connect 25 1 24 0;
+#X connect 27 0 28 0;
+#X connect 28 0 8 0;
+#X connect 29 0 30 0;
+#X connect 30 0 1 0;
+#X connect 31 0 32 0;
+#X connect 32 0 22 0;
+#X connect 32 0 3 0;
+#X connect 34 0 12 0;
+#X connect 35 0 25 0;
+#X connect 37 0 38 0;
+#X connect 40 0 39 0;
+#X connect 41 0 1 0;
+#X connect 42 0 14 0;
+#X connect 42 0 22 0;

@@ -1,0 +1,12 @@
+#N canvas 513 165 614 338 10;
+#X obj 31 105 inlet;
+#X obj 31 214 outlet~;
+#X obj 31 131 - 5;
+#X msg 31 161 0 0 \, 1 5 0 \, 0 5 \$1;
+#X obj 31 188 vline~;
+#X text 29 23 Rectangular enveloppe \; \; Inlet 1 : length of the enveloppe
+\; \; Outlet 1 : the envelope signal;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;

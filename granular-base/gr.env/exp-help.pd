@@ -1,0 +1,21 @@
+#N canvas 201 109 883 578 10;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-ENV 44100 float 2;
+#X coords 0 1 44099 0 200 140 1 0 0;
+#X restore 17 347 graph;
+#X obj 40 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 46 81 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 16 168 f 1000;
+#X text 115 41 Bang this to get an enveloppe and write it in the array
+;
+#X text 115 80 This controls the duration in milliseconds of the enveloppe
+;
+#X obj 16 257 tabwrite~ \$0-ENV;
+#X obj 16 197 gr.env/exp 0.5;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 1;
+#X connect 3 0 7 0;
+#X connect 7 0 6 0;

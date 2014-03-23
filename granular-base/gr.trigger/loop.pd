@@ -1,0 +1,27 @@
+#N canvas 257 40 797 576 10;
+#X obj 60 124 inlet;
+#X obj 130 291 metro;
+#X obj 160 316 f;
+#X obj 168 266 r \$0-DUR;
+#X obj 160 344 outlet;
+#X obj 212 124 inlet;
+#X obj 212 164 s \$0-TOGGLE;
+#X obj 130 243 r \$0-TOGGLE;
+#X obj 212 145 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+0.217015;
+#X obj 84 152 f \$1;
+#X obj 101 124 loadbang;
+#X obj 68 182 s \$0-DUR;
+#X text 61 15 Trigger grains at regular time interval \; \; Inlet 1
+: duration in ms \; Inlet 2 : start/stop triggering \; \; Outlet 2
+: sends a trigger message with the grain length in ms;
+#X connect 0 0 11 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 1;
+#X connect 3 0 2 1;
+#X connect 5 0 8 0;
+#X connect 7 0 1 0;
+#X connect 8 0 6 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;

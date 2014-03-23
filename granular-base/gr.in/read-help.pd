@@ -1,0 +1,37 @@
+#N canvas 123 84 922 571 10;
+#X obj 29 307 gr.in/read \$0-SOUND;
+#X floatatom 29 219 5 0 0 0 - - -;
+#X floatatom 84 250 5 0 0 0 - - -;
+#X floatatom 140 281 5 0 0 0 - - -;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-READ 44100 float 2;
+#X coords 0 44100 44100 0 200 140 1 0 0;
+#X restore 541 129 graph;
+#X text 540 276 The array containing the output of gr.in/read;
+#X obj 542 31 table \$0-SOUND 44100;
+#X text 540 54 A 1 second array we want to read from. Don't care about
+the contents;
+#X obj 30 370 tabwrite~ \$0-READ;
+#X obj 53 338 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 43 179 unpack f f f;
+#X text 69 218 Start position in milliseconds;
+#X text 126 248 Duration in milliseconds;
+#X text 180 280 Play rate;
+#X msg 43 48 0 1000 1;
+#X text 111 49 Get a signal to read the whole SOUND array at rate 1
+;
+#X msg 59 83 500 500 0.5;
+#X text 142 84 Get a signal to read half of the sound \, starting at
+half and at play rate 0.5;
+#X connect 0 0 8 0;
+#X connect 1 0 0 0;
+#X connect 1 0 9 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 2;
+#X connect 9 0 8 0;
+#X connect 10 0 1 0;
+#X connect 10 1 2 0;
+#X connect 10 2 3 0;
+#X connect 14 0 10 0;
+#X connect 16 0 10 0;
