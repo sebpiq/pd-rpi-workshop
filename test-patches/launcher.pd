@@ -1,0 +1,20 @@
+#N canvas 487 135 450 300 10;
+#X obj 50 23 loadbang;
+#X obj 50 85 del 1000;
+#X obj 366 181 print;
+#X msg 328 89 wait for Pd ...;
+#X msg 330 148 opening patch ...;
+#X obj 50 115 getdir;
+#X msg 50 149 \; pd open soundcheck.pd \$1;
+#X text 51 226 To use it for your own patch "myPatch.pd" \, simply
+copy "launcher.pd" in the smae folder \, and replace "soundcheck.pd"
+with your patch name.;
+#X obj 50 58 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 3 0;
+#X connect 0 0 8 0;
+#X connect 1 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 8 0 1 0;
