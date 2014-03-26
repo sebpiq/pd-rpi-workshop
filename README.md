@@ -115,9 +115,9 @@ Starting a patch without GUI, troubleshooting
 
 #### Starting DSP
 
-As you won't have a GUI, you need to start DSP when your patch is loaded (otherwise you won't have sound). For this, on load of your patch, you must send the message `;pd dsp 0`.
+As you won't have a GUI, you need to start DSP when your patch is loaded (otherwise you won't have sound). For this, on load of your patch, you must send the message `[;pd dsp 1(`.
 
-There's a catch though ... there is a bug currently in Pd, so that if you connect a `[loadbang]` directly to the message, and start the DSP instantly when the patch load, sound will not work. You need to put a delay in between, so basically executing the `[;pd dsp 1]` message a few hundred milliseconds after the load.
+There's a catch though ... there is a bug currently in Pd, so that if you connect a `[loadbang]` directly to the message, and start the DSP instantly when the patch load, sound will not work. You need to put a delay in between, so basically executing the `[;pd dsp 1(` message a few hundred milliseconds after the load.
 
 For an example of this, open `soundcheck.pd`. 
 
