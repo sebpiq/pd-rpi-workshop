@@ -1,0 +1,20 @@
+#N canvas 200 177 814 387 10;
+#X obj 107 59 loadbang;
+#X obj 107 129 del 5000;
+#X msg 203 110 loading Pd ...;
+#X text 104 2 This is a loader for patches. When using -nogui \, there
+are some bugs because patches are started before Pd is fully initialized.
+This loader is a hack to fix those;
+#X msg 203 192 loading patch ...;
+#X obj 319 265 print LAUNCHER;
+#X msg 107 293 \; pd open granulator.pd /home/spiq/Dropbox/rpi-instrus
+;
+#X obj 107 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 7 0;
+#X connect 1 0 6 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 4 0 5 0;
+#X connect 7 0 1 0;
+#X connect 7 0 2 0;
